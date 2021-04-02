@@ -16,13 +16,13 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "node": "^15.10.0",
-    "nodemon": "^2.0.7",
     "path": "^0.12.7",
     "sequelize": "^6.6.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.7"},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "launch": "nodemon server.js"
   },
   "author": "",
   "license": "ISC"

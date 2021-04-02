@@ -42,7 +42,7 @@ app.use(express.json());
 // Chemin virtuel pour les fichiers statiques tel que nos images
 app.use('/images', express.static(path.join(__dirname, 'images')));
 // Urls des routes auquelless l'aplication front fera appel
-app.use('/api/', dataRoutes);
+app.use('/api/user/', dataRoutes);
 app.use('/api/', postRoutes);
 
 // export de la constante app pour accès depuis les autres fichiers
