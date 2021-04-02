@@ -1,6 +1,6 @@
 //Import
 let models = require('../models');
-let utils = require('../middlewares/jwtVerif');
+let utils = require('../utils/jwtUtils');
 const fs = require('fs');
 
 

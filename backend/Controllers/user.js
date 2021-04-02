@@ -2,8 +2,8 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const models = require('../models');
-const jwtVerif = require('../middlewares/jwtVerif');
-const verifInput = require('../middlewares/verifInput');
+const jwtUtils = require('../utils/jwtUtils');
+const verifInput = require('../utils/verifInput');
 
 //Création d'un user
 exports.signup = (req, res) => {
