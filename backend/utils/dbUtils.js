@@ -1,11 +1,11 @@
 //Imports
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const models = require('../models');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const models = require("../models");
 
-module.exports ={
-    isAdmin:function(user){
-        //A traiter
-        return true
-    }
-}
+module.exports = {
+  isAdmin: function (user) {
+    //A traiter
+    return true;
+  },
+};

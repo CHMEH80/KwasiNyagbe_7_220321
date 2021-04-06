@@ -1,31 +1,32 @@
 /*Gestion de jwt*/
 
 //import
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
 module.exports = {
-  tokenSign : process.env.SECRET,
+  tokenSign: process.env.SECRET,
   generateToken: function (user) {
-    return jwt.sign({
-      userId: user.id,
-      isAdmin: user.isAdmin
-    },
+    return jwt.sign(
+      {
+        userId: user.id,
+        isAdmin: user.isAdmin,
+      },
       this.tokenSign,
       {
-        expiresIn: '24h'
-      })
+        expiresIn: "24h",
+      }
+    );
   },
   getUserId: function (data) {
     if (data.length > 1) {
-      let token = data.split(' ')[1];
+      let token = data.split(" ")[1];
       try {
-        let decodedToken = jwt.verify(token, this.tokenSign)
-        userId = decodedToken.userId
-        return userId
+        let decodedToken = jwt.verify(token, this.tokenSign);
+        userId = decodedToken.userId;
+        return userId;
+      } catch (err) {
+        return err;
       }
-      catch (err) {
-        return err
-      }
-    };
-  }
-}
+    }
+  },
+};

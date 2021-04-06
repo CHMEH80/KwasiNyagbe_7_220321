@@ -1,8 +1,7 @@
 //Import
-let models = require('../models');
-let utils = require('../utils/jwtUtils');
-const fs = require('fs');
-
+let models = require("../models");
+let utils = require("../utils/jwtUtils");
+const fs = require("fs");
 
 //Création d'un message
 exports.create = (req, res) => {
