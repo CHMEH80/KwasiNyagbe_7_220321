@@ -2,7 +2,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
-const jwtUtils = require("../utils/jwtUtils");
+const utils = require("../utils/jwtUtils");
 const verifInput = require("../utils/verifInput");
 
 //Création d'un user
