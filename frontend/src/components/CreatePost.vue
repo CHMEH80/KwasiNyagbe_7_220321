@@ -9,7 +9,7 @@
           <input v-model="contentPost.content" class="input-text" id="input_text" type="text" />
         </div>
 
-        <!-- <div class="input-group mb-3">
+        <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputFileAddon">Upload</span>
           </div>
@@ -24,7 +24,7 @@
             />
             <label class="custom-file-label" for="inputFile">Choose file</label>
           </div>
-        </div> -->
+        </div>
         <input type="submit" class="btn btn-primary" @click.prevent="createPost" value="Submit" />
         <span id='msgReturnAPI' class="mx-3 text-danger" v-if="user.token==null">Veuillez vous connecter</span>
         <span id='msgReturnAPI' class="mx-3" v-else>{{msgError}}</span>
@@ -53,25 +53,18 @@ export default {
   },
   methods: {
     createPost() {
-      if (this.contentPost.content === "null") {
-        document.getElementById('msgReturnAPI').classList.add('text-danger');
+      console.log(this.contentPost);
+
+      const fd = new FormData();
+      fd.append("inputFile", this.contentPost.postImage);
+      fd.append("content", this.contentPost.content);
+      console.log("test récup", fd.get("inputFile"));
+      console.log("test récup", fd.get("content"));
+      if (fd.get("inputFile") == "null" && fd.get("content") == "null") {
+        let msgReturn = document.getElementById('msgReturnAPI')
+        msgReturn.classList.add('text-danger')
         this.msgError = "Rien à publier";
-        return;
-      }
-      const fd = {
-        content : this.contentPost.content,
-        id:6
-      }
-      // const fd = new FormData();
-      // fd.append("inputFile", this.contentPost.postImage);
-      // fd.append("content", this.contentPost.content);
-      // console.log("test récup", fd.get("inputFile"));
-      // console.log("test récup", fd.get("content"));
-      // if (fd.get("inputFile") == "null" && fd.get("content") == "null") {
-      //   let msgReturn = document.getElementById('msgReturnAPI')
-      //   msgReturn.classList.add('text-danger')
-      //   this.msgError = "Rien à publier";
-      // } else {
+      } else {
         axios
           .post("http://localhost:3000/api/post/create", fd, {
             headers: {
@@ -85,7 +78,7 @@ export default {
             }
           })
           .catch(error => (this.msgError = error));
-      // }
+      }
     },
     onFileChange(e) {
       console.log(e);

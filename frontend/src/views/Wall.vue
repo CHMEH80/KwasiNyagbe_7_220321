@@ -26,12 +26,8 @@ export default {
         content: "",
         image: ""
       },
-      //affichePsts: true,
-      //afficheFrm: false,
+      
       allPosts: []
-      //allComments: [],
-      //postId: "",
-      //nbCom: []
     };
   },
   methods: {
@@ -46,22 +42,16 @@ export default {
           Authorization: "Bearer " + localStorage.getItem("token")
         }
       })
-      //.get("http://localhost:3000/api/post",this.$store.state.headerParams)
+      
       .then(response => {
         console.log("post", response.data);
         this.allPosts = response.data;
       })
       .catch(error => {
-        console.log(error); //affiche pas le message 'normalement' envoyé par le back
+        //affiche pas le message 'normalement' envoyé par le back
+        console.log(error); 
       }),
-      /*axios.get("http://localhost:3000/api/posts/comments")
-                .then(response => {
-                    this.nbCom=response.data;
-                    console.log(this.nbCom);
-                })
-                .catch(error => {
-                console.log(error);
-                });*/
+      
       this.$store.dispatch("getUserInfos");
   }
 };
