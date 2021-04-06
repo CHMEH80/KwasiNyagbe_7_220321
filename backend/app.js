@@ -15,8 +15,8 @@ const path = require('path');
 
 
 // Routes 
-const userRoutes = require('./Routes/user');
-const postRoutes = require('./Routes/post');
+const userRoutes = require('./routes/user');
+const postRoutes = require('./routes/post');
 
 // Utilisation du Framework Express
 const app = express();
