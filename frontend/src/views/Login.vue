@@ -51,10 +51,10 @@ export default {
   computed: {
     ...mapState(["user"])
   },
+  // connexion d'un utilisateur existant
   methods: {
     logIn() {
       if (
-        //TO DO : Vérifier par Regex
         this.dataLogin.username !== null ||
         this.dataLogin.password !== null
       ) {

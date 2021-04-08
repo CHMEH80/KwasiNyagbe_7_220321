@@ -67,7 +67,9 @@ export default {
       required: true
     }
   },
+  // déclenche les composants permettant de modifier un post ou suprimer un post
   methods: {
+    
     emitInfoPost() {
       this.$emit("infosPost", { post: this.post });
     },

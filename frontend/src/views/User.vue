@@ -109,6 +109,7 @@ import { mapState } from "vuex";
 
 export default {
   name: "User",
+  // données du compte utilisateur 
   data() {
     return {
       retourAPI: "",
@@ -121,6 +122,7 @@ export default {
   computed: {
     ...mapState(["user"])
   },
+  // modification des données utilisateur depuis son compte
   methods: {
     deleteAccount() {
       axios

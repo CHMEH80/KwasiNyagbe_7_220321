@@ -47,8 +47,11 @@ export default {
     ...mapState(["user"])
   },
   methods: {
+    // deconnexion de l'utilsateur
     disconnect() {
+      // vide toutes les clés stockées
       localStorage.clear();
+      // remplace la ressource actuelle par celle présente à l'URL donnée
       location.replace(location.origin);
     }
   }

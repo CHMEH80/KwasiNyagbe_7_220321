@@ -35,6 +35,7 @@ export default {
       this.post = payload.post;
     }
   },
+  // Affichage de tous les post
   mounted() {
     axios
       .get("http://localhost:3000/api/post", {

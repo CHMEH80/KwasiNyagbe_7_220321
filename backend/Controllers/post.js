@@ -76,7 +76,7 @@ exports.delete = (req, res) => {
         where: { id: id }
     })
         .then(user => {
-            //Vérification que le demandeur est soit l'admin soit le poster (vérif aussi sur le front)
+            //Vérification que le demandeur est: soit l'admin soit le poster (vérif aussi sur le front)
             if (user && (user.isAdmin == true || user.id == userOrder)) {
                 console.log('Suppression du post id :', req.body.postId);
                 models.Post

@@ -216,7 +216,7 @@ exports.signup = (req, res) => {
         res.status(400).json({ error: 'il manque un paramètre' })
     }
 
-    //TO DO => Vérification des saisies user
+    // Vérification des saisies user
     let emailOk = verifInput.validEmail(email);
     console.log(emailOk)
     let mdpOK = verifInput.validPassword(password);
@@ -224,8 +224,8 @@ exports.signup = (req, res) => {
     let usernameOk = verifInput.validUsername(username);
     console.log(usernameOk)
     if (emailOk == true && mdpOK == true && usernameOk == true) {
-        //Vérification si user n'existe pas déjà
-        //TO DO => Vérifier l'username et l'email
+        // Vérification si user n'existe pas déjà
+        // Vérifier l'username et l'email
         models.User.findOne({
             attributes: ['email'],
             where: { email: email }

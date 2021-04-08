@@ -55,6 +55,7 @@ export default {
   computed: {
     ...mapState(["user"])
   },
+  // enregistrement d'un nouvel utilisateur
   methods: {
     sendSignup() {
       const regexPassword = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/
@@ -66,6 +67,7 @@ export default {
         this.dataSignup.password !== null) &&
         (regexPassword.test(this.dataSignup.password) && regexEmail.test(this.dataSignup.email) && usernameRegex.test(this.dataSignup.username))
       ) {
+        // envoi des données à l'api
         axios
           .post("http://localhost:3000/api/user/signup", this.dataSignup)
           .then(response => {

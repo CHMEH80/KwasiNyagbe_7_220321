@@ -11,8 +11,3 @@ getPost = () => {
     request.send();
 }
 
-/*
-var request = new XMLHttpRequest();
-request.open("POST", "");
-request.setRequestHeader("Content-Type", "application/json");
-request.send(JSON.stringify(jsonBody));*/

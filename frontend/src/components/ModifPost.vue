@@ -79,6 +79,7 @@ export default {
     }
   },
   methods: {
+    // methode pour suppression d'un post
     deletePost() {
       axios
         .delete("http://localhost:3000/api/post/delete", {
@@ -91,11 +92,13 @@ export default {
           }
         })
         .then(() => {
+          // actualiser la page à la suite de delete
           window.location.reload();
         })
         .catch(error => console.log(error));
     },
 
+    // mise à jour d'un post
     updatePost() {
       let newInput = document.getElementById("inputNewText").value;
       //Verification si changements existent
@@ -163,6 +166,7 @@ export default {
         console.log("aucun changement");
       }
     },
+    // permet de supprimer l'image
     deleteImgAction() {
       this.deleteImg = true;
     }
