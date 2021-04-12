@@ -15,9 +15,11 @@ export default new Vuex.Store({
     },
     editOption: ""
   },
+  // change le state donné
   mutations: {
     saveUserInfos(state, [username, userId, email, isAdmin]) {
-        state.user.username = username,
+      //  réinitialisation des données utilisateur
+      state.user.username = username,
           state.user.userId = userId,
           state.user.email = email,
           state.user.token = localStorage.getItem('token'),
@@ -27,6 +29,7 @@ export default new Vuex.Store({
       state.editOption = value
     }
   },
+  // methode 
   actions: {
     getUserInfos(context) {
       axios
@@ -44,6 +47,7 @@ export default new Vuex.Store({
         });
     },
     changeEditStyle(context, value){
+      // appelle la mutation editStyle
       context.commit('editStyle',value)
     }
   },

@@ -6,7 +6,7 @@ const fs = require('fs');
 
 //Création d'un message
 exports.create = (req, res) => {
-    //Declaration de l'url de l'image
+    //Déclaration de l'url de l'image
     let attachmentURL
     //identifier qui créé le message
     let id = utils.getUserId(req.headers.authorization)
@@ -87,7 +87,7 @@ exports.delete = (req, res) => {
 
                         if (postFind.attachement) {
                             const filename = postFind.attachement.split('/images/')[1];
-                            console.log("teseeeest", filename);
+                            console.log("test", filename);
                             fs.unlink(`images/${filename}`, () => {
                                 models.Post
                                     .destroy({

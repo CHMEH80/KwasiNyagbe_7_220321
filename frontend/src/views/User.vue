@@ -120,6 +120,7 @@ export default {
     };
   },
   computed: {
+    // récupère l'élément user depuis le store
     ...mapState(["user"])
   },
   // modification des données utilisateur depuis son compte
@@ -202,6 +203,7 @@ export default {
     }
   },
   mounted() {
+    // déclenche getUserInfos
     this.$store.dispatch("getUserInfos");
   }
 };
